@@ -26,7 +26,20 @@ Select the average price per sqm for flats in each town.
 
 ### Question 3
 
-Select the average resale price of flats by flat type and flat model. Only include flat types and models with an average resale price greater than 500,000. Order the result by flat type and flat model.
+Categorize flats into price ranges and count how many flats fall into each category:
+
+- Under $400,000: 'Budget'
+- $400,000 to $700,000: 'Mid-Range'
+- Above $700,000: 'Premium'
+  Show the counts in descending order.
+
+```sql
+
+```
+
+### Question 4
+
+Count the number of flats sold in each town during the first quarter of 2017 (January to March).
 
 ```sql
 

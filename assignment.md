@@ -25,8 +25,11 @@ FROM resale_flat_prices_2017;
 Select the average price per sqm for flats in each town.
 
 ```
-SELECT
-
+SELECT 
+	town,
+	ROUND(AVG(resale_price / floor_area_sqm), 2)
+FROM resale_flat_prices_2017
+GROUP BY  town;
 
 ```
 
@@ -39,7 +42,18 @@ Categorize flats into price ranges and count how many flats fall into each categ
 - Above $700,000: 'Premium'
   Show the counts in descending order.
 
-```sql
+```
+SELECT 
+  CASE 
+    WHEN resale_price < 400000 THEN 'Budget' 
+    WHEN resale_price BETWEEN 400000 AND 700000 THEN 'Mid-Range' 
+    ELSE 'Premium' 
+  END AS price_level,
+  COUNT(*) AS total_flats
+FROM resale_flat_prices_2017
+GROUP BY price_level
+ORDER BY total_flats DESC;
+
 
 ```
 

@@ -12,7 +12,11 @@ Paste the answer as SQL in the answer code section below each question.
 
 Select the minimum and maximum price per sqm of all the flats.
 
-```sql
+```
+SELECT 
+  ROUND(MIN(resale_price / floor_area_sqm), 2) AS min_price_per_sqm,
+  ROUND(MAX(resale_price / floor_area_sqm), 2) AS max_price_per_sqm
+FROM resale_flat_prices_2017;
 
 ```
 
@@ -20,7 +24,9 @@ Select the minimum and maximum price per sqm of all the flats.
 
 Select the average price per sqm for flats in each town.
 
-```sql
+```
+SELECT
+
 
 ```
 

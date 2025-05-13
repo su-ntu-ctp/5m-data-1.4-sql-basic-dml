@@ -61,7 +61,15 @@ ORDER BY total_flats DESC;
 
 Count the number of flats sold in each town during the first quarter of 2017 (January to March).
 
-```sql
+```
+SELECT 
+  town,
+  COUNT(*) AS number_of_flats_sold
+FROM resale_flat_prices_2017
+WHERE month BETWEEN '2017-01' AND '2017-03'
+GROUP BY town
+ORDER BY number_of_flats_sold DESC;
+
 
 ```
 

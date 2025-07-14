@@ -25,7 +25,7 @@ FROM
 Select the average price per sqm for flats in each town.
 
 ```sql
-SELECT town, ROUND(AVG(resale_price / floor_area_sqm ),2) as AvgPricePerSqm
+SELECT town, ROUND(AVG(resale_price / floor_area_sqm ),2) AS AvgPricePerSqm
 FROM main.resale_flat_prices_2017
 GROUP BY town
 ORDER BY AvgPricePerSqm  DESC
